@@ -15,7 +15,7 @@ app.use(express.json({ extended: true }));
 app.use(cors());
 
 // Assign the port
-const PORT = process.env.PORT || 4000;
+const port = process.env.port || 4000;
 
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
@@ -23,6 +23,6 @@ app.use('/api/projects', require('./routes/project'));
 app.use('/api/tasks', require('./routes/task'));
 
 // Run the server
-app.listen(PORT, () => {
-    console.log(`Server runing at port: ${PORT}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server runing at port: ${port}`);
 });
